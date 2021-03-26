@@ -47,7 +47,7 @@ function AvatarUpload(props) {
         name: `photo.${fileType}`,
         type: `image/${fileType}`
       });
-      const response = await fetch("https://nameless-woodland-78409.herokuapp.com/upload", {
+      const response = await fetch("https://bookin-mobile-backend.herokuapp.com/upload", {
         method: 'post',
         body: data
        })

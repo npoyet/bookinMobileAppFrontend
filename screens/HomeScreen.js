@@ -22,7 +22,7 @@ function HomeScreen(props) {
         setUserMessage('Veuillez saisir un email valide.'); 
     } else {
     setUserMessage('')
-    const response = await fetch('https://nameless-woodland-78409.herokuapp.com/log-in', {
+    const response = await fetch('https://bookin-mobile-backend.herokuapp.com/log-in', {
         method: 'POST',
         headers: {'Content-Type':'application/x-www-form-urlencoded'},
         body: `email=${email.toLowerCase()}&password=${password}`

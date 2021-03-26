@@ -148,6 +148,6 @@ Create Account Screen
   > avatar par défaut
   > Check sur mot de passe
 
-  https://nameless-woodland-78409.herokuapp.com/
+  https://bookin-mobile-backend.herokuapp.com/
   http://192.168.1.32:3000
   */

@@ -25,7 +25,7 @@ function CreateAccountScreen(props) {
   if (!checkEmailFormat(userEmail)) {
       setUserMessage('veuillez saisir un email valide.');
   } else {
-    const response = await fetch('https://nameless-woodland-78409.herokuapp.com/sign-up', {
+    const response = await fetch('https://bookin-mobile-backend.herokuapp.com/sign-up', {
       method: 'POST',
       headers: {'Content-Type':'application/x-www-form-urlencoded'},
       body: `avatar=${props.avatar}&name=${userLibraryName}&email=${userEmail.toLowerCase()}&password=${userPassword}`

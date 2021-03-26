@@ -176,7 +176,7 @@ if (bookAuthors && bookAuthors !== "Unavailable"){
       if (props.user!==null) {
         setLoadingWLAdd(true)
         var addWishList = async () => {
-          const data = await fetch(`https://nameless-woodland-78409.herokuapp.com/wishlist/add/${props.user.token}/${bookId}`, {
+          const data = await fetch(`https://bookin-mobile-backend.herokuapp.com/wishlist/add/${props.user.token}/${bookId}`, {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({"cover":bookCover, "title":bookTitle, "description":bookDescription, "publisher":bookPublisher, "date":bookDate,"categories":bookCategories, "authors":bookAuthors, "pageCount":bookPageCount})
@@ -202,7 +202,7 @@ if (bookAuthors && bookAuthors !== "Unavailable"){
     const handleClickWLDelete = async () => {
       if (props.user!==null) {
         setLoadingWLDelete(true)
-        const dataDelete = await fetch(`https://nameless-woodland-78409.herokuapp.com/wishlist/delete/${props.user.token}/${bookId}`, {
+        const dataDelete = await fetch(`https://bookin-mobile-backend.herokuapp.com/wishlist/delete/${props.user.token}/${bookId}`, {
         method: 'DELETE'
         });
         const bodyDelete = await dataDelete.json();
@@ -227,7 +227,7 @@ if (bookAuthors && bookAuthors !== "Unavailable"){
     if (props.user!==null) {
       setLoadingLBAdd(true)
       var addLibrary= async () => {
-        const data = await fetch(`https://nameless-woodland-78409.herokuapp.com/library/add/${props.user.token}/${bookId}`, {
+        const data = await fetch(`https://bookin-mobile-backend.herokuapp.com/library/add/${props.user.token}/${bookId}`, {
           method: 'POST',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify({"cover":bookCover, "title":bookTitle, "description":bookDescription, "publisher":bookPublisher, "date":bookDate,"categories":bookCategories, "authors":bookAuthors, "pageCount":bookPageCount})
@@ -250,7 +250,7 @@ if (bookAuthors && bookAuthors !== "Unavailable"){
   const handleClickLBDelete = async () => {
     if (props.user!==null) {
       setLoadingLBDelete(true)
-      const dataDelete = await fetch(`https://nameless-woodland-78409.herokuapp.com/library/delete/${props.user.token}/${bookId}`, {
+      const dataDelete = await fetch(`https://bookin-mobile-backend.herokuapp.com/library/delete/${props.user.token}/${bookId}`, {
       method: 'DELETE'
       });
       const bodyDelete = await dataDelete.json();

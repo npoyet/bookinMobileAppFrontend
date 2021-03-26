@@ -28,7 +28,7 @@ function AccountScreen(props) {
 
  // fonction qui modifie en une fois le pseudo, l'avatar et le mot de passe (doit retaper l'ancien)
   const modifyAccount = async () => {
-    const response = await fetch(`https://nameless-woodland-78409.herokuapp.com/users/update/${props.user.token}`, {
+    const response = await fetch(`https://bookin-mobile-backend.herokuapp.com/users/update/${props.user.token}`, {
       method: 'POST',
       headers: {'Content-Type':'application/x-www-form-urlencoded'},
       body: `avatar=${props.avatar}&name=${userLibraryName}&currentPassword=${currentPassword}&password=${userPassword}`
@@ -50,7 +50,7 @@ function AccountScreen(props) {
   useEffect(() => {
     if (props.user!==null) {
       var getUserInfo = async () => {
-        const data = await fetch(`https://nameless-woodland-78409.herokuapp.com/users/${props.user.token}`, {
+        const data = await fetch(`https://bookin-mobile-backend.herokuapp.com/users/${props.user.token}`, {
           method: 'POST',
           headers: {'Content-Type': 'application/x-www-form-urlencoded' },
           body: `token=${props.user.token}`
