@@ -255,12 +255,6 @@ const styles = StyleSheet.create({
  
  function mapDispatchToProps(dispatch) {
   return {
-    // onSubmitPhoto: function(photo, age, gender, glasses, beard, smile, hairColor) { 
-    //   dispatch( {type: 'savePhoto', photo: photo, age:age, gender:gender, glasses:glasses, beard:beard, smile:smile, hairColor:hairColor }) 
-    // },
-    // onSubmitVideo: function(video, thumbnail) { 
-    //   dispatch( {type: 'saveVideo', video: video, thumbnail: thumbnail }) 
-    // }
   }
 }
 

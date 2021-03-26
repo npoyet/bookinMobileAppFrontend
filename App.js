@@ -1,8 +1,6 @@
 import { LogBox, Share, TouchableOpacity } from 'react-native';
 LogBox.ignoreLogs(['Warning: ...']);
-
 import React, {useEffect, useState} from 'react';
-
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
 import WishlistScreen from './screens/WishlistScreen';
@@ -10,14 +8,10 @@ import LibraryScreen from './screens/LibraryScreen';
 import AccountScreen from './screens/AccountScreen';
 import BookScreen from './screens/BookScreen';
 import CreateAccountScreen from './screens/CreateAccountScreen';
-
-
 import { Ionicons } from '@expo/vector-icons';
-
 import { NavigationContainer, useIsFocused } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import avatar from './reducers/avatar.reducer';
@@ -27,7 +21,6 @@ import wishlist from './reducers/wishlist.reducer';
 
 
 const store = createStore(combineReducers({avatar, user, library, wishlist}));
-
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -38,6 +31,8 @@ const BottomNavigator = () => {
   const [ badgeCountLB, setBadgeCountLB ] = useState(0);
   const [ badgeCountWL, setBadgeCountWL ] = useState(0);
 
+
+// mettre à jour les badges dans le bottom navigator
 useEffect(() => {
     setBadgeCountLB(store.getState().library.length)
     setBadgeCountWL(store.getState().wishlist.length) 
@@ -83,6 +78,8 @@ useEffect(() => {
 
 export default function App() {  
 
+
+  // fonction de partage sur la page livre
   const onShare = async (title, authors) => {
     try {
       const result = await Share.share({
@@ -128,9 +125,6 @@ export default function App() {
 
 /*
 To do:
-> fichier env pour fetch et bdd
-> mep sur heroku
-
 SearchScreen:
   > Tri
   > Nb de résultat
